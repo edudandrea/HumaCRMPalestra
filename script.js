@@ -4,7 +4,8 @@
 
 const API_PAGAMENTOS = '/api/pagamentos';
 const WHATSAPP_NUMERO = '5554991568322';
-const WHATSAPP_MENSAGEM_PAGAMENTO = 'Ola! Pagamento aprovado no site. Quero confirmar minha inscricao no treinamento GEN Z & ALPHA.';
+const WHATSAPP_MENSAGEM_PAGAMENTO = 'Olá! Meu pagamento foi aprovado pelo site e quero confirmar minha inscrição no treinamento GEN Z & ALPHA.';
+const PAGAMENTO_STORAGE_KEY = 'palestra_pagamento_confirmado';
 
 let mercadoPagoPublicKey = '';
 let formasPagamentoCarregadas = false;
@@ -60,10 +61,60 @@ function verificarRetornoPagamento() {
 
 window.abrirWhatsappPagamento = function () {
 
-  const texto = encodeURIComponent(WHATSAPP_MENSAGEM_PAGAMENTO);
+  const texto = encodeURIComponent(montarMensagemPagamento());
   window.location.href = `https://wa.me/${WHATSAPP_NUMERO}?text=${texto}`;
 
 };
+
+function salvarDadosPagamento(dados) {
+
+  try {
+    localStorage.setItem(PAGAMENTO_STORAGE_KEY, JSON.stringify(dados));
+  } catch {
+    // Se o navegador bloquear o storage, o WhatsApp ainda abre com a mensagem padrao.
+  }
+
+}
+
+function obterDadosPagamentoSalvos() {
+
+  if (compradorAtual) {
+    return compradorAtual;
+  }
+
+  try {
+    const dados = localStorage.getItem(PAGAMENTO_STORAGE_KEY);
+    return dados ? JSON.parse(dados) : null;
+  } catch {
+    return null;
+  }
+
+}
+
+function montarMensagemPagamento() {
+
+  const dados = obterDadosPagamentoSalvos();
+
+  if (!dados) {
+    return WHATSAPP_MENSAGEM_PAGAMENTO;
+  }
+
+  const linhas = [
+    'Olá! Meu pagamento foi aprovado pelo site e quero confirmar minha inscrição no treinamento GEN Z & ALPHA.',
+    '',
+    'Dados da inscrição:',
+    `Nome: ${dados.nome || '-'}`,
+    `Telefone: ${dados.telefone || '-'}`,
+    `E-mail: ${dados.email || '-'}`,
+    dados.lote ? `Lote: ${dados.lote}` : null,
+    dados.preco || precoAtual ? `Valor: ${dados.preco || precoAtual}` : null,
+    '',
+    'Fico no aguardo da confirmação. Obrigado(a)!'
+  ];
+
+  return linhas.filter(Boolean).join('\n');
+
+}
 
 /* ============================================================
    SCROLL REVEAL
@@ -263,11 +314,14 @@ window.confirmar = function () {
 
   compradorAtual = {
     lote: loteAtual,
+    preco: precoAtual,
     nome,
     email,
     cpf,
     telefone: tel
   };
+
+  salvarDadosPagamento(compradorAtual);
 
   const formView = document.getElementById('modal-form-view');
   const paymentView = document.getElementById('modal-payment-view');
