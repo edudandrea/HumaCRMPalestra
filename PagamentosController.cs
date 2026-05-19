@@ -305,10 +305,19 @@ public sealed class PagamentosController : ControllerBase
 
     private string? ObterConfiguracao(string key)
     {
-        var value = Environment.GetEnvironmentVariable($"MERCADOPAGO_{key.ToUpperInvariant()}")
+        var value = Environment.GetEnvironmentVariable($"MERCADOPAGO_{ToUpperSnakeCase(key)}")
+            ?? Environment.GetEnvironmentVariable($"MERCADOPAGO_{key.ToUpperInvariant()}")
             ?? _configuration[$"MercadoPago:{key}"];
 
         return string.IsNullOrWhiteSpace(value) ? null : value;
+    }
+
+    private static string ToUpperSnakeCase(string value)
+    {
+        return string.Concat(value.SelectMany((character, index) =>
+            index > 0 && char.IsUpper(character)
+                ? new[] { '_', character }
+                : new[] { char.ToUpperInvariant(character) }));
     }
 
     private object? CriarBackUrls()

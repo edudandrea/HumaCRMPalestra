@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: palestra
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: MERCADOPAGO_PUBLIC_KEY
+        sync: false
+      - key: MERCADOPAGO_ACCESS_TOKEN
+        sync: false
+      - key: MERCADOPAGO_STATEMENT_DESCRIPTOR
+        value: HUMAN
+      - key: MERCADOPAGO_NOTIFICATION_URL
+        sync: false
