@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="img/favicon.ico">
+  <title>HUMAN Conexão Estratégica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════ MODAL DE ANÚNCIO ════════ -->
+<div id="anuncio-overlay">
+  <div id="anuncio-box">
+    <button id="anuncio-close" onclick="document.getElementById('anuncio-overlay').style.display='none'" aria-label="Fechar">✕</button>
+    <p class="anuncio-tag">Edição exclusiva · Turma única</p>
+    <h2 class="anuncio-titulo">07 de Julho</h2>
+    <p class="anuncio-sub">19h · Ao vivo pelo Google Meet</p>
+    <button class="anuncio-btn" onclick="document.getElementById('anuncio-overlay').style.display='none';document.getElementById('preco').scrollIntoView({behavior:'smooth'});">Garantir minha vaga</button>
+  </div>
+</div>
+
+<!-- ════════ WHATSAPP FLUTUANTE ════════ -->
+<a data-href="https://wa.me/5554991568322?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20treinamento." onclick="window.open(this.dataset.href,'_blank');return false;" class="whatsapp-btn" title="Fale no WhatsApp" style="cursor:pointer;">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="grid-lines"></div>
+  <div class="stars" id="stars"></div>
+
+  <div class="hero-watermark">GEN Z & ALPHA</div>
+
+  <div class="hero-inner">
+    <div class="hero-left">
+      <span class="badge">Alta Performance</span>
+      <h1 class="headline">
+        <span class="line1">GEN Z &amp; ALPHA</span>
+        <span class="line2">O futuro é agora</span>
+      </h1>
+      <p class="subtext">
+        As novas gerações exigem uma nova forma de liderar,<br>
+        descubra como transformar diversidade em resultado.
+      </p>
+      <div class="cta-group">
+        <a class="btn-primary" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">Quero garantir minha vaga</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="phone-wrap">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="corner corner-tl"></div>
+          <div class="corner corner-tr"></div>
+          <div class="corner corner-bl"></div>
+          <div class="corner corner-br"></div>
+          <div class="scan-line"></div>
+          <span class="phone-label">Alta Performance</span>
+          <div class="avatar-circle">
+            <img src="img/tech.png" alt="Jo Palmeira"
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='👩‍💼'"/>
+          </div>
+          <div class="data-lines">
+            <div class="data-line" style="--fd:1.2s;--fdelay:1.2s;--fw:85%;"></div>
+            <div class="data-line" style="--fd:1.4s;--fdelay:1.5s;--fw:65%;"></div>
+            <div class="data-line" style="--fd:1.0s;--fdelay:1.8s;--fw:90%;"></div>
+            <div class="data-line" style="--fd:1.3s;--fdelay:2.1s;--fw:50%;"></div>
+          </div>
+          <span class="phone-label" style="color:rgba(255,255,255,0.3);font-size:10px;">Gen Z · Alpha · Resultados</span>
+          <span class="phone-label" style="color:rgba(255,255,255,0.3);font-size:10px;">O Futuro é Agora</span>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Role para saber mais</span>
+    <div class="chevron"></div>
+  </div>
+</section>
+
+<!-- ════════ SEÇÃO 2 — PROBLEMA ════════ -->
+<div class="s-problema">
+  <div class="section">
+    <h2 class="section-title reveal">O problema não são as gerações</h2>
+
+    <div class="grid-2 problema-cards reveal">
+      <div class="card card-erro"><span class="erro-icon">✕</span> Equipes desalinhadas</div>
+      <div class="card card-erro"><span class="erro-icon">✕</span> Conflitos constantes</div>
+      <div class="card card-erro"><span class="erro-icon">✕</span> Falta de engajamento</div>
+      <div class="card card-erro"><span class="erro-icon">✕</span> Queda de performance</div>
+    </div>
+
+    <div class="problema-text reveal">
+      <p>Líderes estão tentando aplicar o mesmo modelo de gestão para perfis completamente diferentes  e isso simplesmente não funciona mais.</p>
+      <span class="cyan">O cenário mudou</span>
+      <strong>E a forma de liderar precisa mudar junto.</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 3 — O QUE VAI APRENDER ════════ -->
+<div class="s-aprender">
+  <div class="section">
+    <h2 class="section-title reveal">O que você vai aprender</h2>
+    <div class="aprender-body reveal">
+      <p>Neste treinamento, você aprenderá a liderar diferentes gerações de forma estratégica, mantendo alto nível de performance, controle e foco em resultados.</p>
+      <p>Mais do que conteúdo teórico, a proposta é oferecer clareza, direcionamento e ferramentas práticas que poderão ser aplicadas imediatamente na rotina do seu time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 4 — CONTEÚDO ════════ -->
+<div class="s-conteudo">
+  <div class="section">
+    <h2 class="section-title reveal">Conteúdo direto ao ponto</h2>
+
+    <div class="grid-2 reveal" style="margin-top:48px;">
+      <div class="card"><span class="check-icon">Como entender o comportamento de cada geração no ambiente de trabalho</span></div>
+      <div class="card"><span class="check-icon">Os erros mais comuns na liderança multigeracional</span></div>
+      <div class="card"><span class="check-icon">Como alinhar expectativas sem gerar conflitos</span></div>
+      <div class="card"><span class="check-icon">Estratégias práticas para aumentar engajamento e performance</span></div>
+      <div class="card"><span class="check-icon">Como transformar diversidade em vantagem competitiva</span></div>
+      <div class="card"><span class="check-icon">O novo papel do líder em um cenário de múltiplas gerações</span></div>
+      <div class="card"><span class="check-icon">O que as novas gerações realmente buscam no trabalho</span></div>
+      <div class="card"><span class="check-icon">Como atrair, desenvolver e reter profissionais de diferentes perfis</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 5 — NÃO É PALESTRA ════════ -->
+<div class="s-palestra">
+  <div class="section">
+    <h2 class="section-title reveal">Não é mais uma palestra motivacional</h2>
+    <div class="palestra-body reveal">
+      <p>Aqui você não encontrará teoria genérica nem conteúdo superficial.</p>
+      <p>Este treinamento foi desenvolvido a partir da realidade das empresas e fundamentado em pesquisas atuais, com foco em compreender as novas gerações, estruturar equipes mais consistentes e gerar resultados com clareza e aplicação prática.</p>
+      <p class="cyan">É sobre liderança no mundo real.</p>
+      <p class="white-bold">E no cenário atual, isso não é mais opcional.</p>
+      <p class="cyan" style="font-size:clamp(17px,1.8vw,22px);font-weight:700;">O futuro já começou e ele exige uma nova forma de liderar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 6 — QUEM VAI CONDUZIR ════════ -->
+<div class="s-quem">
+  <div class="section">
+    <h2 class="section-title reveal">Quem vai conduzir</h2>
+
+    <div class="speaker-card reveal">
+      <div class="speaker-img">
+        <img src="img/palestrante.jpeg" alt="Jo Palmeira" onerror="this.outerHTML='👩‍💼'"/>
+      </div>
+      <div class="speaker-content">
+        <p class="speaker-name">Jo Palmeira</p>
+        <p>Lidera equipes desde os 19 anos, com trajetória consolidada na linha de frente da gestão em um dos segmentos mais desafiadores do país.</p>
+        <p>Atua no desenvolvimento estratégico de pessoas e negócios, apoiando empresas na estruturação de processos de gestão, no aumento de performance e no alinhamento entre liderança e resultados.</p>
+        <p>Possui sólida experiência na condução de equipes multigeracionais, com foco na transformação de cenários desorganizados em operações mais eficientes, promovendo times mais capacitados e lideranças mais conscientes.</p>
+        <p class="cyan">Fundadora da HUMAN Conexão Estratégica.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 7 — DEPOIMENTOS ════════ -->
+<div class="s-depo">
+  <div class="section">
+    <h2 class="section-title reveal">Depoimentos</h2>
+
+    <div class="grid-2 reveal" style="margin-top:48px;">
+      <div class="card">
+        <span class="stars-icon">★★★★★</span>
+        <p class="depo-quote">"A profissional mais incrível com quem já tive a honra de trabalhar!
+                                Parceira, mulher guerreira, inspiradora. Um ser humano admirável e uma profissional dedicada, que sempre entrega o seu melhor.
+                                Ter uma Jô na equipe é ter comprometimento, talento e coração em tudo que faz.
+                                Sem dúvida, quem tem uma Jô na empresa, tem tudo!
+                                Uma indicação de alguém que faz a diferença por onde passa."</p>
+        <p class="depo-author">— Ana Cláudia, Coord. Relac. DRSUL Fiat</p>
+      </div>
+      <div class="card">
+        <span class="stars-icon">★★★★★</span>
+        <p class="depo-quote">“Tive o privilégio de trabalhar com a Jocelaine no Grupo Carburgo, onde ela se destacou como gerente de relacionamento com o cliente. Dona de uma personalidade marcante, Jocelaine alia competência e empatia como poucos profissionais. Seu foco na experiência do cliente é genuíno e impressionante. Sem dúvida, é uma profissional que eleva o padrão de atendimento e gera valor real tanto para a empresa quanto para as pessoas.”</p>
+        <p class="depo-author">— Moisés Cunha, Ger. Comercial Tramonto Jeep</p>
+      </div>
+      <div class="card">
+        <span class="stars-icon">★★★★★</span>
+        <p class="depo-quote">"Não sei se você tem alguma mulher que admira no nosso meio de trabalho, imagino que sim!
+                                Mas você é essa pessoa pra mim, todas as vezes que nos damos palestras, sempre te ouço com muita atenção e levo de fato para mim.
+                                No meio de tantos homens que a gente trabalha é tão confortante ter alguém assim como você, sabe...
+                                a vibe da mulher porreta sabe, que faz, que não desiste."</p>
+        <p class="depo-author">— Emilly, Entregadora Técnica VW</p>
+      </div>
+      <div class="card">
+        <span class="stars-icon">★★★★★</span>
+        <p class="depo-quote">"Mesmo sem termos atuado juntas diretamente, tive a oportunidade de acompanhar a trajetória da Jô e me encantar com sua forma de enxergar as relações humanas no ambiente corporativo. Vai além da técnica, entregando sensibilidade, escuta ativa e reflexões que geram conexões verdadeiras. Seu olhar revela um entendimento profundo sobre o que importa nas interações: cuidado, acolhimento e respeito à singularidade. Jô inspira pela forma como constrói vínculos e amplia o olhar sobre liderança, cultura e propósito. É referência para quem acredita na transformação dos ambientes de trabalho por meio de conversas significativas e ações coerentes."</p>
+        <p class="depo-author">— Débora Ferraz, Regional Pós-Vendas BYD</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 8 — PARA VOCÊ QUE ════════ -->
+<div class="s-paraquem">
+  <div class="section">
+    <h2 class="section-title reveal">Esse treinamento é para você que</h2>
+
+    <div class="grid-2 reveal" style="margin-top:48px;">
+      <div class="card"><span class="check-icon">Lidera equipes com diferentes perfis e sente dificuldade em alinhar</span></div>
+      <div class="card"><span class="check-icon">Quer melhorar a performance do time sem aumentar desgaste</span></div>
+      <div class="card"><span class="check-icon">Precisa reduzir conflitos e aumentar engajamento</span></div>
+      <div class="card"><span class="check-icon">Busca uma liderança mais estratégica e atual</span></div>
+      <div class="card"><span class="check-icon">Quer resultado, não teoria</span></div>
+      <div class="card"><span class="check-icon">Deseja desenvolver uma gestão adaptada ao novo cenário</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 9 — NÃO É PARA ════════ -->
+<div class="s-nao">
+  <div class="nao-inner">
+    <h2 class="section-title reveal">Para quem não é</h2>
+    <div class="nao-card reveal">
+      <p>Este treinamento não se destina a quem busca conteúdo superficial ou soluções genéricas sem aplicabilidade.</p>
+      <span class="white-bold">É direcionado a profissionais que desejam evoluir de forma consistente como líderes e gerar resultados concretos.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 10 — PREÇOS ════════ -->
+<div class="s-preco" id="preco">
+  <div class="section">
+    <h2 class="section-title reveal">Garanta sua vaga</h2>
+    <p class="section-sub reveal">Lote promocional disponível por tempo limitado.</p>
+
+    <div class="evento-info reveal">
+      <div class="evento-info-item">
+        <span class="evento-info-label">Data</span>
+        <span class="evento-info-valor">07 de Julho</span>
+      </div>
+      <div class="evento-info-sep"></div>
+      <div class="evento-info-item">
+        <span class="evento-info-label">Horário</span>
+        <span class="evento-info-valor">19h</span>
+      </div>
+      <div class="evento-info-sep"></div>
+      <div class="evento-info-item">
+        <span class="evento-info-label">Formato</span>
+        <span class="evento-info-valor">Ao vivo · Google Meet</span>
+      </div>
+      <div class="evento-info-sep"></div>
+      <div class="evento-info-item">
+        <span class="evento-info-label">Turma</span>
+        <span class="evento-info-valor">Edição exclusiva</span>
+      </div>
+    </div>
+
+    <div class="preco-grid">
+      <!-- Lote 1 -->
+      <div class="preco-card featured">
+        <span class="lote-badge featured">LOTE 1 — PROMOCIONAL</span>
+        <div class="lote-price-wrap">
+          <p class="lote-price">R$ 67,90</p>
+          <p class="best-tag">Melhor preço!</p>
+        </div>
+        <button class="btn-preco featured" onclick="abrirModal('Lote 1 — Promocional','R$ 67,90')">Quero participar</button>
+      </div>
+      <!-- Lote 2 — BLOQUEADO -->
+      <div class="preco-card bloqueado">
+        <span class="lote-badge normal">LOTE 2</span>
+        <div class="lote-price-wrap">
+          <p class="lote-price">R$ 97,90</p>
+          <p class="best-tag" style="opacity:0;">-</p>
+        </div>
+        <button class="btn-preco normal" disabled>Em breve</button>
+      </div>
+      <!-- Lote Final — BLOQUEADO -->
+      <div class="preco-card bloqueado">
+        <span class="lote-badge normal">LOTE FINAL</span>
+        <div class="lote-price-wrap">
+          <p class="lote-price">R$ 127,90</p>
+          <p class="best-tag" style="opacity:0;">-</p>
+        </div>
+        <button class="btn-preco normal" disabled>Em breve</button>
+      </div>
+    </div>
+
+    <div class="urgency-bar reveal">
+      <span>As vagas são limitadas para garantir a qualidade da entrega e a interação durante o treinamento.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SEÇÃO 11 — IN COMPANY ════════ -->
+<div class="s-incompany">
+  <div class="section">
+    <h2 class="section-title reveal">Leve esse treinamento para a sua empresa</h2>
+
+    <div class="incompany-card reveal">
+      <p>Essa não é apenas uma palestra, é um treinamento estratégico adaptado à realidade da sua operação.</p>
+      <p>Ideal para empresas que desejam melhorar a performance de equipes, reduzir conflitos geracionais e desenvolver lideranças mais preparadas para o cenário atual.</p>
+      <a data-href="https://wa.me/5554991568322?text=Olá!%20Tenho%20interesse%20no%20treinamento%20in%20company%20para%20minha%20empresa.%20Poderia%20me%20passar%20mais%20informações%3F" onclick="window.open(this.dataset.href,'_blank');return false;" class="btn-purple" style="cursor:pointer;">Falar sobre treinamento in company</a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ CTA FINAL ════════ -->
+<section class="s-cta-final">
+  <div class="cta-final-inner reveal">
+    <h2 class="cta-final-title">Sua forma de liderar precisa acompanhar o novo cenário.</h2>
+    <p class="cta-final-sub">Ou você evolui sua liderança, ou sua equipe perde performance.</p>
+    <a class="btn-final" onclick="document.getElementById('preco').scrollIntoView({behavior:'smooth'});" style="cursor:pointer;">Garantir minha vaga agora</a>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <img src="img/logo.png" alt="HUMAN Conexão Estratégica" class="footer-logo" />
+  <p class="brand">HUMAN Conexão Estratégica</p>
+  <div class="footer-social">
+    <a data-href="https://www.instagram.com/humanconexaoestrategica?igsh=aWFzaHllYzFpb3o4" onclick="window.open(this.dataset.href,'_blank');return false;" class="social-icon" title="Instagram" style="cursor:pointer;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 1.924 2.104.493 3.535-.023 5.377.072 7.232.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.855.601 3.697 2.032 5.128 1.431 1.431 3.273 1.947 5.128 2.032C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.085 3.697-.601 5.128-2.032 1.431-1.431 1.947-3.273 2.032-5.128.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.085-1.855-.601-3.697-2.032-5.128C20.645.673 18.803.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+      </svg>
+    </a>
+    <a data-href="https://www.linkedin.com/in/jocelaine-palmeira?utm_source=share_via&utm_content=profile&utm_medium=member_android" onclick="window.open(this.dataset.href,'_blank');return false;" class="social-icon" title="LinkedIn" style="cursor:pointer;">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+    </a>
+  </div>
+  <p class="copy">© 2026 — Todos os direitos reservados</p>
+  <button class="topo-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    Voltar ao topo
+  </button>
+</footer>
+
+<!-- ════════ MODAL FORMULÁRIO + PAGAMENTO ESTÁTICO ════════ -->
+<div id="modal-overlay" style="display:none;">
+  <div id="modal-box">
+    <button id="modal-close" onclick="fecharModal()" aria-label="Fechar modal">✕</button>
+
+    <div id="modal-form-view">
+      <h3 class="modal-title">Garantir minha vaga</h3>
+      <p class="modal-lote" id="modal-lote-label"></p>
+      <p class="modal-preco" id="modal-preco-label"></p>
+
+      <div class="modal-fields">
+        <div class="field-group">
+          <label for="f-nome">Nome completo</label>
+          <input type="text" id="f-nome" placeholder="Seu nome completo" autocomplete="name" />
+        </div>
+
+        <div class="field-group">
+          <label for="f-email">E-mail</label>
+          <input type="email" id="f-email" placeholder="seu@email.com" autocomplete="email" />
+        </div>
+
+        <div class="field-group">
+          <label for="f-cpf">CPF</label>
+          <input type="text" id="f-cpf" placeholder="000.000.000-00" maxlength="14" inputmode="numeric" autocomplete="off" />
+        </div>
+
+        <div class="field-group">
+          <label for="f-tel">Telefone</label>
+          <input type="text" id="f-tel" placeholder="(00) 00000-0000" maxlength="15" inputmode="tel" autocomplete="tel" />
+        </div>
+      </div>
+
+      <p class="modal-error" id="modal-error"></p>
+
+      <button type="button" class="btn-confirmar" onclick="confirmar()">
+        Confirmar
+      </button>
+    </div>
+
+    <div id="modal-payment-view" style="display:none;">
+      <h3 class="modal-title">Escolha a forma de pagamento</h3>
+      <p class="modal-lote" id="payment-lote-label"></p>
+      <p class="modal-preco" id="payment-preco-label"></p>
+
+      <p class="payment-instruction">
+        Selecione uma opção abaixo para finalizar sua inscrição no ambiente seguro do Mercado Pago.
+      </p>
+
+      <div class="payment-options-static">
+        <button type="button" class="payment-option-btn pix" onclick="pagarPix()">
+          <span class="payment-option-icon">◆</span>
+          <strong>Pix</strong>
+          <small>Pagamento instantâneo</small>
+        </button>
+
+        <button type="button" class="payment-option-btn card" onclick="pagarCartao()">
+          <span class="payment-option-icon">▣</span>
+          <strong>Cartão</strong>
+          <small>Crédito ou débito</small>
+        </button>
+      </div>
+
+      <p class="modal-error" id="payment-error"></p>
+
+      <button type="button" class="btn-voltar-form" onclick="voltarFormulario()">
+        Voltar
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  /* Correção para garantir que o modal funcione mesmo se o style.css tiver regras antigas */
+  #modal-overlay{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    background:rgba(2,6,23,.78);
+    backdrop-filter:blur(10px);
+  }
+
+  #modal-overlay.aberto{
+    display:flex !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    pointer-events:auto !important;
+  }
+
+  #modal-box{
+    position:relative;
+    width:min(96vw,560px);
+    max-height:92vh;
+    overflow:auto;
+    background:linear-gradient(180deg,#0f172a,#020617);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:24px;
+    padding:34px;
+    box-shadow:0 30px 90px rgba(0,0,0,.5);
+    color:#fff;
+  }
+
+  #modal-close{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:38px;
+    height:38px;
+    border:0;
+    border-radius:50%;
+    cursor:pointer;
+    color:#fff;
+    background:rgba(255,255,255,.1);
+    font-size:18px;
+  }
+
+  #modal-close:hover{
+    background:rgba(255,255,255,.18);
+  }
+
+  .payment-options-static{
+    display:flex;
+    gap:18px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+
+  .payment-option-btn{
+    flex:1;
+    min-width:210px;
+    border:0;
+    border-radius:18px;
+    padding:26px 22px;
+    cursor:pointer;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:.25s ease;
+    box-shadow:0 14px 35px rgba(0,0,0,.18);
+  }
+
+  .payment-option-btn strong{
+    font-size:24px;
+    line-height:1;
+    font-weight:800;
+  }
+
+  .payment-option-btn small{
+    font-size:14px;
+    opacity:.88;
+  }
+
+  .payment-option-icon{
+    font-size:26px;
+    opacity:.95;
+  }
+
+  .payment-option-btn.pix{
+    background:linear-gradient(135deg,#00c896,#00a884);
+  }
+
+  .payment-option-btn.card{
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+  }
+
+  .payment-option-btn:hover{
+    transform:translateY(-4px);
+    filter:brightness(1.06);
+  }
+
+  .payment-instruction{
+    margin-top:10px;
+    color:rgba(255,255,255,.72);
+    line-height:1.5;
+  }
+
+  .modal-error{
+    color:#fca5a5;
+    margin-top:14px;
+    min-height:22px;
+  }
+</style>
+<script src="script.js"></script>
+</body>
+</html>
+
