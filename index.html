@@ -262,34 +262,35 @@
     </div>
 
     <div class="preco-grid">
-      <!-- Lote 1 -->
-      <div class="preco-card featured">
-        <span class="lote-badge featured">LOTE 1 — PROMOCIONAL</span>
-        <div class="lote-price-wrap">
-          <p class="lote-price">R$ 67,90</p>
-          <p class="best-tag">Melhor preço!</p>
-        </div>
-        <button class="btn-preco featured" onclick="abrirModal('Lote 1 — Promocional','R$ 67,90')">Quero participar</button>
-      </div>
-      <!-- Lote 2 — BLOQUEADO -->
-      <div class="preco-card bloqueado">
-        <span class="lote-badge normal">LOTE 2</span>
-        <div class="lote-price-wrap">
-          <p class="lote-price">R$ 97,90</p>
-          <p class="best-tag" style="opacity:0;">-</p>
-        </div>
-        <button class="btn-preco normal" disabled>Em breve</button>
-      </div>
-      <!-- Lote Final — BLOQUEADO -->
-      <div class="preco-card bloqueado">
-        <span class="lote-badge normal">LOTE FINAL</span>
-        <div class="lote-price-wrap">
-          <p class="lote-price">R$ 127,90</p>
-          <p class="best-tag" style="opacity:0;">-</p>
-        </div>
-        <button class="btn-preco normal" disabled>Em breve</button>
-      </div>
-    </div>
+      <!-- Lote 1 — ENCERRADO -->
+<div class="preco-card bloqueado">
+  <span class="lote-badge normal">LOTE 1 — ENCERRADO</span>
+  <div class="lote-price-wrap">
+    <p class="lote-price">R$ 67,90</p>
+    <p class="best-tag" style="opacity:0;">-</p>
+  </div>
+  <button class="btn-preco normal" disabled>Encerrado</button>
+</div>
+
+<!-- Lote 2 — ATIVO -->
+<div class="preco-card featured">
+  <span class="lote-badge featured">LOTE 2</span>
+  <div class="lote-price-wrap">
+    <p class="lote-price">R$ 97,90</p>
+    <p class="best-tag">Disponível até 02/07</p>
+  </div>
+  <button class="btn-preco featured" onclick="abrirModal('Lote 2','R$ 97,90')">Quero participar</button>
+</div>
+
+<!-- Lote Final — LIBERA EM 03/07 -->
+<div class="preco-card bloqueado">
+  <span class="lote-badge normal">LOTE FINAL</span>
+  <div class="lote-price-wrap">
+    <p class="lote-price">R$ 127,90</p>
+    <p class="best-tag" style="opacity:0;">-</p>
+  </div>
+  <button class="btn-preco normal" disabled>Disponível em 03/07</button>
+</div>
 
     <div class="urgency-bar reveal">
       <span>As vagas são limitadas para garantir a qualidade da entrega e a interação durante o treinamento.</span>
